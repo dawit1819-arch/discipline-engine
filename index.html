@@ -3,41 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Discipline Engine — Money Mode</title>
-<meta name="description" content="Money and work first. Wake-relative phone reminders, the Gate, and a daily goal check.">
-<meta name="theme-color" content="#07070a">
+<title>Koyomi</title>
+<meta name="description" content="A quiet calendar you can talk to. It moves what you missed.">
+<meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Discipline">
+<meta name="apple-mobile-web-app-title" content="Koyomi">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-
-<main id="app"></main>
-<div id="tabmount"></div>
-<div id="toasts"></div>
-<div id="levelup"></div>
-
-<noscript>
-  <div style="padding:40px;text-align:center;color:#9d9aa4;font-family:sans-serif">
-    This app needs JavaScript enabled.
-  </div>
-</noscript>
-
-<script src="js/data.js"></script>
-<script src="js/store.js"></script>
-<script src="js/money.js"></script>
-<script src="js/notify.js"></script>
-<script src="js/vision.js"></script>
+<div class="app">
+  <main id="view"></main>
+  <nav class="tabs" aria-label="Sections">
+    <button data-tab="day"><span class="k">暦</span><span>Day</span></button>
+    <button data-tab="talk"><span class="k">話</span><span>Talk</span></button>
+    <button data-tab="setup"><span class="k">設</span><span>Setup</span></button>
+  </nav>
+</div>
+<div id="sheet" class="sheet" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/core.js"></script>
+<script src="js/ntfy.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/voice.js"></script>
 <script src="js/ui.js"></script>
-<script src="js/money-ui.js"></script>
-<script src="js/app.js"></script>
 </body>
 </html>
